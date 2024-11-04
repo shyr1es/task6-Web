@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-task1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="libs/autoComplete.js-10.2.7/dist/css/autoComplete.01.css">
+    <link rel="stylesheet" href="libs/customSelect/custom-select.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body >
+    <header class="header">
+        <button id="theme-switch">
+            <img src="assets/icons/icons8-do-not-disturb-ios-24.png" alt="dark">
+            <img src="assets/icons/icons8-солнце-24.png" alt="light">
+        </button>
+        
+            <!-- navBar , home section  -->
+        <div class="container container_header">
+            <nav class="nav">
+                <a href="#!" class="logo">
+                    <img  class="logo_img" src="" alt="logo">
+                </a>
+    
+                <ul class="nav_list">
+                    <li class="nav_list__item">
+                        <a href="#" class="nav_list__link">Special</a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="#hotel" class="nav_list__link">Hotels</a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="#" class="nav_list__link">Tours</a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="#destinations" class="nav_list__link">Destinations</a>
+                    </li>
+                    <li class="nav_list_item">
+                        <a href="#" class="nav_list__link" id="supportLink">Support</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                <div class="user">
+                    <div class="user_content">
+                        <span class="user_profile" id="profile-btn">Profile</span>
+                        <div class="dropdown" id="dropdown-menu" style="display: none;">
+                            <div class="settings-option">
+                                <a href="settings.html" class="settings-option-link"> <!-- Укажите здесь путь к вашей странице настроек -->
+                                    <img src="assets/icons/settings.png" alt="Settings" class="settings-icon">
+                                    <span class="settings-text">Settings</span>
+                                </a>
+                            </div>
+                            <button id="login-btn" class="user_button">Login</button>
+                        </div>
+                    </div>
+                    <div class="user_ava">
+                        <img class="user_ava_img" src="assets/ава.jpeg" alt="ava">
+                    </div>
+                </div>
+                
+            </nav>
+
+            
+            <!-- Login/LogOut  -->
+            <section class="home">
+                <div class="login-form_container">
+                    <i class="uil uil-times form-close"></i>
+                    <!-- LoginForm -->
+                     <div class="login_form">
+                        <form action="#">
+                            <h2>Login</h2>
+                            <div class="input_box">
+                                <input type="email" placeholder="Enter your email" required>
+                                <i class="uil uil-envelope-alt email"></i>
+                            </div>
+                            <div class="input_box">
+                                <input type="password" placeholder="Enter your password" required>
+                                <i class="uil uil-lock password"></i>
+                                <i class="uil uil-eye-slash pw-hide"></i>
+                            </div>
+
+                            <div class="option_field">
+                                <span class="checkbox">
+                                    <input type="checkbox" id="check">
+                                    <label for="check">Remember me</label>
+                                </span>
+                                <a href="#" class="forgot_pw">Forgot password?</a>
+                            </div>
+
+                            <button class="button_login">Login Now</button>
+                            
+                            <div class="login_signup">
+                                Don't have an account? <a href="#" id="signup">Signup</a>
+                            </div>
+                        </form>
+                     </div>
+
+                     <!-- Signup From  -->
+                     <div class="signup_form">
+                        <form action="#">
+                            <h2>Signup</h2>
+                            <div class="input_box">
+                                <input type="email" placeholder="Enter your email" required>
+                                <i class="uil uil-envelope-alt email"></i>
+                            </div>
+                            <div class="input_box">
+                                <input type="password" placeholder="Create password" required>
+                                <i class="uil uil-lock password"></i>
+                                <i class="uil uil-eye-slash pw-hide"></i>
+                            </div>
+                            <div class="input_box">
+                                <input type="password" placeholder="Confirm password" required>
+                                <i class="uil uil-lock password"></i>
+                                <i class="uil uil-eye-slash pw-hide"></i>
+                            </div>
+
+                            <button class="button_login">Signup Now</button>
+                            
+                            <div class="login_signup">
+                                Already have an account? <a href="#" id="login">Login</a>
+                            </div>
+                        </form>
+                     </div>
+                </div>
+            </section>
+                 
+
+            <div class="header_content">
+                <h1 class="header_title">
+                    Discover the most engaging places
+                    <div id="currentDateTime" class="current-date-time"></div>
+                </h1>
+                <button class="button button--huge" id="discoverBtn">
+                    <img src="assets/icons/icons8-globe-30.png" alt="globus">
+                    Discover
+                </button>
+            </div>
+            
+            <form action="" class="form" id="bookingForm">
+                <div class="form__input-wrapper form__input--location">
+                    <label for="location" class="form__label">Location</label>
+                    <input autocomplete="off" type="text" class="form__input" id="location" placeholder="Explore nearby destinations">
+                    <span class="error-message" id="locationError" style="color:red; display:none;">Location is required</span>
+                </div>
+            
+                <div class="form__input-wrapper form__input--activity">
+                    <label for="activity" class="form__label">Activity</label>
+                    <select name="activity" id="activity" class="form__select">
+                        <option value="">All activities</option>
+                        <option value="Culture">Culture</option>
+                        <option value="Sport">Sport</option>
+                        <option value="Extreme">Extreme</option>
+                    </select>
+                </div>
+            
+                <div class="form__input-wrapper form__input--date">
+                    <label for="date" class="form__label">When</label>
+                    <input type="text" class="form__input" id="date" placeholder="Choose a date">
+                    <span class="error-message" id="dateError" style="color:red; display:none;">Date is required</span>
+                </div>
+            
+                <div class="form__input-wrapper form__input--guests">
+                    <label for="guests" class="form__label">Guests</label>
+                    <select name="guests" id="guests" class="form__select">
+                        <option value="">1 guest</option>
+                        <option value="2">2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests or more</option>
+                    </select>
+                </div>
+            
+                <button class="button button--search" type="submit">
+                    <img src="assets/icons/icons8-magnifier-30.png" alt="">
+                </button>
+            </form>
+            
+        </div>
+    </header>
+
+    <!-- Support Chat -->
+    <div id="supportChat" class="chat-modal">
+        <div class="chat-content">
+            <span class="close-chat" id="closeChat">&times;</span>
+            <h2>Chat with support</h2>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Message -->
+            </div>
+            <textarea id="chatInput" placeholder="Enter your message..."></textarea>
+            <button id="sendMessage" class="button">Sumbit</button>
+        </div>
+    </div>
+    
+    <main class="main">
+        <!-- Popular -->
+        <section id="destinations" class="section">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="title-1">Popular Destinations</h2>
+                </div>
+                <div class="section__cards section__cards--popular">
+                    <div class="card">
+                        <a href="#" class="card__link"></a>
+                        <img class="card__img" src="assets/popular/kz.jpg" alt="kz">
+                        <h3 class="card__title">Charyn National Park</h3>
+                        <a href="#kz" class="card__location">Kazakhstan, Almaty region</a>
+                    </div>
+                   
+                    <div class="card">
+                        <a href="#" class="card__link"></a>
+                        <img class="card__img" src="assets/popular/tr.jpg" alt="tr">
+                        <h3 class="card__title">The Palace</h3>
+                        <a href="#tr" class="card__location">Turkey, Istanbul</a>
+                    </div>
+
+                    <div class="card">
+                        <a href="#" class="card__link"></a>
+                        <img class="card__img"src="assets/popular/dh.jpeg" alt="dh">
+                        <h3 class="card__title">Burj Khalifa</h3>
+                        <a href="#dh" class="card__location">United Arab Emirates</a>
+                    </div>
+
+                    <div class="card">
+                        <a href="#" class="card__link"></a>
+                        <img class="card__img"src="assets/popular/us.jpg" alt="us">
+                        <h3 class="card__title">Times Square</h3>
+                        <a href="#us" class="card__location">Usa, NewYork</a>
+                    </div>
+
+                    <div class="card">
+                        <a href="#" class="card__link"></a>
+                        <img class="card__img"src="assets/popular/gr.jpg" alt="gr">
+                        <h3 class="card__title">The Athens</h3>
+                        <a href="#gr" class="card__location">The capital of Greece</a>
+                    </div>
+
+                    <div class="card">
+                        <a href="#" class="card__link"></a>
+                        <img class="card__img"src="assets/popular/ch.jpg" alt="ch">
+                        <h3 class="card__title">The Great Wall of China</h3>
+                        <a href="#ch" class="card__location">China, Guangzhou</a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+        <!-- Hotels  -->
+        <section id="hotel" class="section">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="title-1">Hotel & Restaurants</h2>
+            <a href="#!" class="button-more" id="viewMoreBtn">
+                View all
+            </a>
+        </div>
+
+        <!-- Первая группа карточек отелей -->
+        <div class="section__cards section__cards--hotels">
+            <article class="card">
+                <a href="#" class="card__link"></a>
+                <img class="card__img card__img--hotel" src="assets/hotel&rest/aktau.jpg" alt="img">
+                <h3 class="card__title card__title--hotel">Rixos Water World</h3>
+                <footer class="card__footer">
+                    <a href="#kz_aktau_hotel" class="card__location card__location--icon">Kazakhstan, Aktau</a>
+                </footer>
+            </article>
+
+            <article class="card">
+                <a href="#" class="card__link"></a>
+                <img class="card__img card__img--hotel" src="assets/hotel&rest/dubai.webp" alt="img">
+                <h3 class="card__title card__title--hotel">CÉLAVI</h3>
+                <footer class="card__footer">
+                    <a href="#dh_dubai_rest" class="card__location card__location--icon">United Arab Emirates, Dubai</a>
+                </footer>
+            </article>
+
+            <article class="card">
+                <a href="#" class="card__link"></a>
+                <img class="card__img card__img--hotel" src="assets/hotel&rest/china.jpg" alt="img">
+                <h3 class="card__title card__title--hotel">The Venetian</h3>
+                <footer class="card__footer">
+                    <a href="#ch_macau_hotel" class="card__location card__location--icon">China, Macau</a>
+                </footer>
+            </article>
+
+            <article class="card">
+                <a href="#" class="card__link"></a>
+                <img class="card__img card__img--hotel" src="assets/hotel&rest/tr.jpeg" alt="img">
+                <h3 class="card__title card__title--hotel">Etiler Marias</h3>
+                <footer class="card__footer">
+                    <a href="#tr_istanbul_rest" class="card__location card__location--icon">Turkey, Istanbul</a>
+                </footer>
+            </article>
+        </div>
+
+        <!-- Вторая группа карточек (скрыта по умолчанию) -->
+        <!-- Вторая группа карточек (отображается при клике) -->
+<div class="section__cards section__cards--hotels2 fade-in" id="more-hotels2" style="display: none;">
+    <article class="card">
+        <a href="#" class="card__link"></a>
+        <img class="card__img card__img--hotel" src="assets/hotel&rest/us-hotel.jpg" alt="img">
+        <h3 class="card__title card__title--hotel">The Langham, Chicago</h3>
+        <footer class="card__footer">
+            <a href="#us_chicago_hotel" class="card__location card__location--icon">United States, Chicago</a>
+        </footer>
+    </article>
+
+    <article class="card">
+        <a href="#" class="card__link"></a>
+        <img class="card__img card__img--hotel" src="assets/hotel&rest/kz_res.jpg" alt="img">
+        <h3 class="card__title card__title--hotel">La Rivière</h3>
+        <footer class="card__footer">
+            <a href="#kz_La Rivière_res" class="card__location card__location--icon">Kazakhstan, Astana</a>
+        </footer>
+    </article>
+
+    <article class="card">
+        <a href="#" class="card__link"></a>
+        <img class="card__img card__img--hotel" src="assets/hotel&rest/fr.jpeg" alt="img">
+        <h3 class="card__title card__title--hotel">Mirazur</h3>
+        <footer class="card__footer">
+            <a href="#fr_Mirazur_res" class="card__location card__location--icon">France, Menton</a>
+        </footer>
+    </article>
+
+    <article class="card">
+        <a href="#" class="card__link"></a>
+        <img class="card__img card__img--hotel" src="assets/hotel&rest/dh.webp" alt="img">
+        <h3 class="card__title card__title--hotel">Burj Al Arab Jumeirah</h3>
+        <footer class="card__footer">
+            <a href="#dh_Burj Al Arab Jumeirah_hotel" class="card__location card__location--icon">United Arab Emirates, Dubai</a>
+        </footer>
+    </article>
+</div>
+
+    </div>
+    </section>
+
+        <!-- Tips -->
+        <section class="section">
+            <div class="container">
+        
+                <header class="section__header">
+                    <h2 class="title-1">Travel Tips & Advice</h2>
+                </header>
+        
+            
+                <div class="section__cards section__cards--4-in-row">
+                    <article class="card card--wide">
+                        <a href="#" class="card__link"></a>
+                        <img class="card__img_ta card__img--no--margin" src="assets/travel&advice/france.jpg" alt="img">
+
+                        <div class="card__desc">
+                            <h3 class="card__title card__title-big">The Eiffel Tower and the Secrets of Paris</h3>
+                            <p class="card__text">Paris is a city of light and romance. Visit the Eiffel Tower, stroll through Montmartre and admire the art in the Louvre. The city is also famous for its fine cuisine, starting with croissants for breakfast and ending with gourmet dinners in the best restaurants.
+                                Tip: Buy tickets to the Eiffel Tower in advance to avoid queues, and arrive in the morning for the best photos while the tower and surrounding streets are less crowded.</p>
+                        </div>
+                    </article>
+
+                    <article class="card card--wide">
+                        <a href="#" class="card__link"></a>
+                        <img class="card__img_ta card__img--no--margin" src="assets/travel&advice/kyoto.jpg" alt="img">
+
+                        <div class="card__desc">
+                            <h3 class="card__title card__title-big">Sakura of the Japanese Soul</h3>
+                            <p class="card__text">Kyoto is the cultural heart of Japan, where ancient temples, serene gardens, and traditional tea houses blend seamlessly with modern life. In spring, cherry blossoms fill the city, and in autumn, vibrant maple leaves paint the landscape. Key attractions include the Golden Pavilion (Kinkaku-ji), the red torii gates of Fushimi Inari, and the historic streets of Gion.</p>
+                        </div>
+                    </article>
+                </div>
+    </section>
+
+        <!-- activities -->
+        <section id="activities" class="section">
+    <div class="container">
+
+        <header class="section__header">
+            <h2 class="title-1">Activities</h2>
+        </header>
+
+    
+        <div class="section__cards section__cards--activities">
+            <article class="card">
+                <a href="#" class="card__link"></a>
+                <img class="card__img card__img--activities" src="assets/activities/sailing.jpeg" alt="img">
+                <h3 class="card__title card__title--activities">Sailing</h3>
+            </article>
+
+            <article class="card">
+                <a href="#" class="card__link"></a>
+                <img class="card__img card__img--activities" src="assets/activities/climbing.webp" alt="img">
+                <h3 class="card__title card__title--activities">Climbing</h3>
+            </article>
+
+            <article class="card">
+                <a href="#" class="card__link"></a>
+                <img class="card__img card__img--activities" src="assets/activities/surfing.jpg" alt="img">
+                <h3 class="card__title card__title--activities">Surfing</h3>
+            </article>
+
+            <article class="card">
+                <a href="#" class="card__link"></a>
+                <img class="card__img card__img--activities" src="assets/activities/mountain.jpg" alt="img">
+                <h3 class="card__title card__title--activities">Mountain</h3>
+            </article>
+
+        </div>
+    </section>
+
+        <!-- About us  -->
+        <section id="about" class="section">
+            <div class="container">
+                <class class="about-us">
+                    <div class="about-us__desc">
+                        <h3 class="section__title">About Us</h3>
+                        <p class="about-us__text">At Discover the Most Engaging Places, we connect you with unforgettable experiences around the globe. From exciting activities to curated tours, our platform simplifies your travel planning. Our goal is to help you explore new destinations and create lasting memories with ease. Let your adventures begin with us.</p>
+                        
+                        <div class="about-us__btn">
+                            <a href="#" class="button-more">Read more</a>
+                        </div>
+                    </div>
+                    
+                    <img class="about-us__img" src="assets/about.avif" alt="abt img ">
+                </class>
+            </div>
+    </section>
+    </main>
+
+
+    <!-- FOOTER  -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__row">
+
+                <!-- COPYRIGHT  -->
+                <div class="footer__copyright">
+                    <img src="" alt="logo">
+                    <p class="footer__text">Travel with us and discover unique activities and tours around the world.</p>
+                    <ul class="footer__socials">
+                        <li class="footer__socials-item">
+                            <a href="#!" class="footer__socials-link">
+                                <img src="assets/icons/icons8-facebook-30.png" alt="social">
+                            </a>
+                        </li>
+
+                        <li class="footer__socials-item">
+                            <a href="#!" class="footer__socials-link">
+                                <img src="assets/icons/icons8-instagram-30.png" alt="social">
+                            </a>
+                        </li>
+
+                        <li class="footer__socials-item">
+                            <a href="#!" class="footer__socials-link">
+                                <img src="assets/icons/icons8-twitter-squared-30.png" alt="social">
+                            </a>
+                        </li>
+                    </ul>                   
+                </div>
+
+                <!-- NAV  -->
+                <div class="footer__nav-wrapper">
+                    <!-- About us  -->
+                    <div class="footer__nav">
+                        <h3 class="footer_nav-title">About</h3>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item">
+                                <a href="#about" class="footer__nav-link">About Us</a>
+                            </li>
+
+                            <li class="footer__nav-item">
+                                <a href="#activities" class="footer__nav-link">Activities</a>
+                            </li>
+
+                            <li class="footer__nav-item">
+                                <a href="#hotel" class="footer__nav-link">Hotel</a>
+                            </li>
+
+                            <li class="footer__nav-item">
+                                <a href="#destinations" class="footer__nav-link">Destinations</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Company  -->
+                    <div class="footer__nav">
+                        <h3 class="footer_nav-title">Company</h3>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item">
+                                <a href="#!" class="footer__nav-link">Why us</a>
+                            </li>
+
+                            <li class="footer__nav-item">
+                                <a href="#!" class="footer__nav-link">News</a>
+                            </li>
+
+                            <li class="footer__nav-item">
+                                <a href="#!" class="footer__nav-link">Partner With Us</a>
+                            </li>
+                            
+                            <li class="footer__nav-item">
+                                <a href="#!" class="footer__nav-link">FAQ</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Support  -->
+                    <div class="footer__nav">
+                        <h3 class="footer_nav-title">Support</h3>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item">
+                                <a href="#!" class="footer__nav-link">Account</a>
+                            </li>
+
+                            <li class="footer__nav-item">
+                                <a href="#!" class="footer__nav-link">Support Center</a>
+                            </li>
+
+                            <li class="footer__nav-item">
+                                <a href="#!" class="footer__nav-link">Feedback</a>
+                            </li>
+                            
+                            <li class="footer__nav-item">
+                                <a href="#!" class="footer__nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SUBS  -->
+                <div class="footer__subscribe">
+                    <div class="footer__subscribe-title">Subscribe on our destinations review newsletters</div>
+
+                    <form action="" class="subscribe">
+                        <div class="subscribe__input-wrapper">
+                            <input type="email" class="subscribe__input" value="example@email.com" required>
+                            <label for="" class="subscribe__label">Your Email</label>
+                        </div>
+                        <div class="subscribe__btn-wrapper">
+                            <button class="button button--subscribe">
+                                <img src="assets/icons/icons8-right-arrow-32.png" alt="btn_row">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    
+    <!-- libScripts -->
+    <script src="libs/autoComplete.js-10.2.7/dist/autoComplete.min.js"></script>
+    <script src="libs/customSelect/custom-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.umd.min.js"></script>
+
+    <!-- my Scripts -->
+    <script src="js/Input_Dest.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/Valid.js"></script>
+    <script src="js/Accordion.js"></script>
+    <script src="js/Chat.js"></script>
+    <script src="js/DarkLight.js"></script>
+    <script src="js/Login&LogOut.js"></script>
+</body>
+</html>

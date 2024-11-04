@@ -1,0 +1,79 @@
+:root {
+    --button-background: slateblue;
+    --button-text-color: white;
+    --button-hover-background: rgb(135, 116, 253);
+    --button-more-background: #fff;
+    --button-more-hover-background: #e7e4fe;
+    --button-more-text-color: #5243c2;
+}
+
+.darkmode {
+    --button-background: slateblue;
+    --button-text-color: white;
+    --button-hover-background: rgb(135, 116, 253);
+    --button-more-background: #333;
+    --button-more-hover-background: #444;
+    --button-more-text-color: white;
+}
+
+/* Основные стили кнопок */
+.button {
+    background-color: var(--button-background);
+    border-radius: 12px;
+    color: var(--button-text-color);
+    transition: background-color 0.2s ease-in;
+}
+
+.button:hover {
+    background-color: var(--button-hover-background);
+}
+
+.button--huge {
+    padding: 24px;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+}
+
+.button--search {
+    width: 60px;
+    height: 60px;
+    padding: 18px;
+}
+
+.button--subscribe {
+    width: 72px;
+    height: 72px;
+    padding: 28px;
+}
+
+/* button-more */
+.button-more {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px;
+    height: 44px;
+    background-color: var(--button-more-background);
+    border-radius: 12px;
+    font-size: 16px;
+    color: var(--button-more-text-color);
+    transition: background-color 0.2s ease-in;
+}
+
+.button-more:hover {
+    background-color: var(--button-more-hover-background);
+}
+
+/* login button  */
+.login-form_container .button_login{
+    background: var(--button-background);
+    color: var(--button-text-color);
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    padding: 0 12px;
+    border-radius: 10px;    
+}

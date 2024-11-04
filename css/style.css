@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800&display=swap');
+body{
+    font-family: "Poppins", serif;
+}
+.none{
+    display: none !important;
+}
+
+.header{
+    padding: 31px 0 100px;
+    height: 800px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('');
+    transition: background 1s ease;
+    
+}
+.header a{
+    color: #fff;
+    text-decoration: none;
+}
+.container{
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 32px;
+}
+.container_header{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*NAV*/
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 300px;
+}
+.logo{
+    flex-shrink: 0;
+}
+
+/* NAV_LIST */
+.nav_list{
+    display: flex;
+    column-gap: 54px;
+    font-size: 14px;
+    font-weight: 400;
+    list-style-type: none;
+    text-transform: capitalize;
+}
+.nav_list__item{
+
+}
+.nav_list__link{
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.nav_list__link:hover {
+    opacity: 1; 
+}
+
+
+/* USER */
+.user {
+    display: flex;
+    column-gap: 8px; /* Отступ между элементами */
+    align-items: center; /* Выравнивание по центру */
+}
+
+.user_content {
+    display: flex;
+    flex-direction: column; /* Вертикальная ориентация для элементов */
+    align-items: flex-end; /* Выравнивание элементов по правому краю */
+    position: relative; /* Позволяет позиционировать выпадающее меню */
+}
+
+.user_profile {
+    cursor: pointer; /* Указывает, что элемент кликабельный */
+    font-weight: 600; /* Увеличиваем вес шрифта для выделения */
+}
+
+/* Стили для выпадающего меню */
+.dropdown {
+    position: absolute; /* Позволяет меню выпадать под элементом "Profile" */
+    top: 30px; /* Отступ от верхней части "Profile" */
+    right: 0; /* Выравнивание по правому краю */
+    background-color: white; /* Цвет фона выпадающего меню */
+    border: 1px solid #e0e0e0; /* Обводка для выпадающего меню */
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тень для визуализации */
+    z-index: 100; /* Убедитесь, что меню поверх других элементов */
+    padding: 10px; /* Внутренние отступы для выпадающего меню */
+    min-width: 200px; /* Минимальная ширина для выпадающего меню */
+}
+
+/* Стили для кнопок */
+.user_button {
+    background-color: slateblue; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем обводку */
+    border-radius: 12px; /* Скругленные углы */
+    padding: 10px 20px; /* Внутренние отступы */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.2s ease; /* Плавный переход цвета */
+    display: block; /* Чтобы кнопка занимала всю ширину контейнера */
+    width: 100%; /* Занять полную ширину выпадающего меню */
+    margin: 5px 0; /* Отступы между кнопками */
+}
+
+.user_button:hover {
+    background-color: rgb(135, 116, 253); /* Цвет фона при наведении */
+}
+
+/* Стили для иконки настроек */
+.settings-option {
+    display: flex; /* Отображение в строку */
+    align-items: center; /* Выравнивание по вертикали */
+    padding: 10px 0; /* Отступы для иконки и текста */
+}
+
+.settings-icon {
+    width: 24px; /* Ширина иконки */
+    height: 24px; /* Высота иконки */
+}
+
+.settings-text {
+    color: black;
+}
+
+/* Стили для аватара */
+.user_ava {
+    /* Стили для контейнера с аватаром (если необходимо) */
+}
+
+.user_ava_img {
+    width: 50px; /* Ширина изображения аватара */
+    border-radius: 50%; /* Скругление для аватара */
+}
+
+/* Добавленные стили для улучшения внешнего вида */
+.dropdown:hover {
+    background-color: #f9f9f9; /* Цвет фона при наведении на меню */
+}
+
+.dropdown:focus-within {
+    border-color: slateblue; /* Цвет границы при фокусе */
+}
+
+
+/* HEADER_CONTENT */
+.header_content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    align-items: center;
+    text-align: center; 
+}
+.header_title{
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 1.3;
+}
+
+/* FORM */
+.form{
+    display: flex;
+    align-items: center;
+    width: 1140px;
+    height: 88px;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 12px;
+    color: black;
+}
+.form__input-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px 16px 56px;
+    /* background-color: rgba(233, 150, 122, 0.285); */
+    background-repeat: no-repeat;
+    background-position: 16px 24px;
+}
+.form__input--location{
+    width: 300px;
+    background-image: url("/assets/icons/icons8-location-30.png");
+}
+.form__input--activity{
+    width: 255px;
+    background-image: url("/assets/icons/icons8-activity-30.png");
+}
+.form__input--date{
+    width: 255px;
+    background-image: url("/assets/icons/icons8-date-30.png");
+}
+.form__input--guests{
+    width: 255px;
+    background-image: url("/assets/icons/icons8-queue-30.png"); 
+}
+.form__label{
+    font-size: 14px;
+    font-weight: 400;
+    color: #5b5b5b;
+}
+.form__input{
+    color: #161414;
+    font-weight: 500;
+    font-size: 16px;
+}
+.form__input::placeholder{
+    color: #000;
+}
+
+/* CHAT  */
+/* Стиль для модального окна чата */
+.chat-modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+}
+
+.chat-content {
+    background-color: white;
+    margin: 15% auto; /* Отступ сверху и центрирование */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; 
+    border-radius: 10px; /* Закругленные углы */
+}
+
+.chat-messages {
+    max-height: 300px;
+    overflow-y: auto; /* Скроллинг по вертикали */
+    margin-bottom: 10px;
+}
+
+.close-chat {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* date-time  */
+.current-date-time {
+    color: white; /* Цвет текста */
+    font-size: 14px; /* Размер шрифта */
+    margin-top: 8px; /* Отступ сверху */
+}
+
+
+
+/* LoginFORM  */
+
+.login-form_container{
+    max-width: 400px;
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    background-color: #ffffff;
+    padding: 0 30px;
+    color: #333;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;   
+}
+.home.show .login-form_container{
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);   
+}
+/* .home::before{
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+} */
+.home.home.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+.form-close{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #0b0217;
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+/* Login/signup swap  */
+.signup_form{
+    display: none;
+}
+.login-form_container.active .signup_form{
+    display: block;
+}
+.login-form_container.active .login_form{
+    display: none;
+}
+/* Login/signup swap  */
+
+
+.login-form_container h2{
+    margin-top: 30px;
+    font-size: 22px;
+    color: #0b0217;
+    text-align: center;
+    font-weight: 600;
+}
+.input_box{
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+}
+.input_box input {
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    text-indent: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1.5px solid #aaaaaa ;
+    transition: all 0.3s ease-in;
+}
+.input_box input:focus{
+    border-color: #7B61FF;
+}
+.input_box i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.input_box i.email,
+.input_box i.password{
+    left: 0;
+    color: #707070;
+}
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password{
+    color: #7B61FF;
+}
+.input_box i.pw-hide{
+    right: 0;
+    font-size: 18px;
+    cursor: pointer;
+}
+.option_field{
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.checkbox{
+    display: flex;
+    column-gap: 8px;
+    white-space: nowrap;
+    font-size: 12px;
+}
+.login-form_container a{
+    color: #7B61FF;
+    font-size: 14px;
+}
+.login-form_container a:hover{
+    text-decoration: underline;
+}
+.checkbox input{
+    accent-color: #7B61FF;
+}
+.checkbox label{
+    font-size: 14px;
+    color: #0b0217;
+    user-select: none;
+    cursor: pointer;
+}
+.login_signup{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+} 

@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+/* Dark/light */
+:root {
+    --background-color: white;
+    --text-color: black;
+    --link-color: #7B61FF;
+    --card-background: #ffffff;
+    --header-background: white;
+    --footer-background: #f9f9f9;
+    --card-color:#5b5b5b;
+    --border-color: transparent;
+}
+.darkmode {
+    --background-input: #222222;
+    --background-color: black;
+    --text-color: white;
+    --link-color: #9C7CFF;
+    --card-background: #000000;
+    --header-background: #444;
+    --footer-background: #141414;
+    --card-color:#b1b1b1;
+    --border-color: transparent;
+}
+
+#theme-switch {
+    height: 50px;
+    width: 60px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #231f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    cursor: pointer;
+}
+#theme-switch img {
+    width: 24px;
+    height: 24px;
+}
+#theme-switch img:last-child {
+    display: none;
+}
+.dark-mode #theme-switch img:first-child {
+    display: none;
+}
+.dark-mode #theme-switch img:last-child {
+    display: block;
+}
+
+
+/* MAIN */
+.main {
+    padding: 120px 0;
+    display: grid;
+    gap: 120px;
+    background-color: var(--background-color);
+}
+.title-1 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+.section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 64px;
+}
+.section__cards {
+    display: grid;
+    gap: 32px;
+}
+.section__cards--popular {
+    grid-template-columns: repeat(6, 1fr);
+}
+.section__cards--hotels {
+    grid-template-columns: repeat(4, 1fr);
+}
+.section__cards--hotels2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.section__cards--activities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.section__cards--4-in-row {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* CARD */
+.card {
+    box-sizing: border-box;
+    position: relative;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+}
+.card--wide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+.card__link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.card__img {
+    border-radius: 12px;
+    margin-bottom: 8px;
+    width: 250px;
+    height: 150px;
+}
+.card__img--hotel {
+    margin-bottom: 10px;
+}
+.card__img--activities {
+    height: 300px;
+    width: 100%;
+    border-radius: 12px;
+}
+.card__img--no--margin {
+    margin: 0;
+}
+.card__title {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+.card__title--hotel {
+    margin-bottom: 12px;
+}
+.card__location {
+    flex-shrink: 1;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+    color: #979797;
+    font-size: 13px;
+}
+.card__location:hover {
+    color: var(--link-color);
+}
+.card__location--icon {
+    padding-left: 20px;
+    background-repeat: no-repeat;
+    background-position: 0px 2px;
+    background-image: url('/assets/icons/icons8-маркер-16.png');
+}
+
+/* Footer */
+.card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Travel Advice */
+.card__img_ta {
+    border-radius: 12px;
+    margin-bottom: 8px;
+    height: 100%;
+}
+.card__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.card__title--big {
+    color: var(--text-color);
+    font-weight: 800;
+    font-size: 20px;
+}
+.card__text {
+    color: var(--card-color);
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* About Us */
+.about-us {
+    margin: 100px auto;
+    max-width: 1144px;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+}
+.about-us__desc {
+    display: grid;
+    gap: 32px;
+}
+.about-us__text {
+    font-size: 16px;
+    color: var(--card-color);
+    line-height: 2;
+}
+.about-us__btn {
+    justify-self: flex-start;
+}
+.section__title {
+    color: var(--text-color);
+    font-size: 32px;
+    font-weight: 600;
+}
+.about-us__img {
+    border-radius: 24px;
+}
+/* Footer */
+.footer {
+    padding: 120px 0;
+    background-color: var(--footer-background);
+}
+.footer__row {
+    display: grid;
+    gap: 64px;
+    grid-template-columns: repeat(3, auto);
+}
+.footer__copyright {
+    max-width: 354px;
+    display: grid;
+    gap: 16px;
+}
+.footer__logo {
+    /* Placeholder for logo styles */
+}
+.footer__text {
+    margin-bottom: 32px;
+    font-size: 13px;
+    color: var(--text-color);   
+}
+.footer__socials {
+    display: flex;
+    gap: 32px;
+}
+
+/* Footer NAV */
+.footer__nav-wrapper {
+    display: flex;
+    gap: 64px;
+}
+.footer__nav {
+    display: grid;
+    gap: 20px;
+    color: var(--text-color);
+}
+.footer__nav-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color); 
+}
+.footer__nav-list {
+    display: grid;
+    gap: 12px;
+}
+.footer__nav-link {
+    color: #5b5b5b;
+    font-size: 13px;
+}
+.footer__nav-link:hover {
+    color: var(--link-color); /* Цвет ссылки при наведении */
+}
+
+/* Footer SUBSCRIBE */
+.footer__subscribe {
+    max-width: 388px;
+}
+.footer__subscribe-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color); /* Цвет заголовка подписки */
+}
+.subscribe {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.subscribe__input-wrapper {
+    position: relative;
+}
+.subscribe__input {
+    padding: 32px 20px 16px 56px;
+    width: 300px;
+    height: 72px;
+    background-color: var(--background-input);
+    color: var(--text-color); /* Цвет текста в инпуте */
+    border: 1px solid var(--border-color); /* Цвет границы инпута */
+    border-radius: 12px;
+    background-image: url('../assets/icons/icons8-новый-пост-30.png');
+    background-repeat: no-repeat;
+    background-position: 16px 21px;
+}
+.subscribe__input:focus {
+    outline: none;
+    border-color: var(--link-color); /* Цвет границы при фокусе */
+}
+.subscribe__label {
+    position: absolute;
+    top: 24px;
+    left: 56px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #5b5b5b; /* Цвет текста лейбла */
+    pointer-events: none;
+    transition: all 0.3s ease-in;
+}
+.subscribe__input:focus ~ .subscribe__label,
+.subscribe__input:valid ~ .subscribe__label {
+    top: 15px;
+    color: var(--link-color); /* Цвет лейбла при фокусе */
+}
+.subscribe__label--top {
+    top: 15px;
+}
+
