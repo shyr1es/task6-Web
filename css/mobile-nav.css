@@ -1,7 +1,6 @@
-.no-scroll{
-    overflow-x: hidden;
+.no-scroll {
+	overflow-y: hidden;
 }
-
 
 .mobile-nav {
 	position: fixed;

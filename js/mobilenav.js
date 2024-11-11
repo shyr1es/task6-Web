@@ -17,4 +17,3 @@ fade.onclick = function () {
 	menuIcon.classList.toggle('nav-icon--active');
 	document.body.classList.toggle('no-scroll');
 };
- 
