@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css ">
     <link rel="stylesheet" href="libs/autoComplete.js-10.2.7/dist/css/autoComplete.01.css">
     <link rel="stylesheet" href="libs/customSelect/custom-select.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
@@ -63,6 +64,10 @@
                         <img class="user_ava_img" src="assets/ава.jpeg" alt="ava">
                     </div>
                 </div>
+
+                <button class="mobile-nav-btn">
+                    <div class="nav-icon"></div>
+                </button>
                 
             </nav>
 
@@ -142,7 +147,7 @@
                 </button>
             </div>
             
-            <form action="" class="form" id="bookingForm">
+            <form action="" class="form none" id="bookingForm">
                 <div class="form__input-wrapper form__input--location">
                     <label for="location" class="form__label">Location</label>
                     <input autocomplete="off" type="text" class="form__input" id="location" placeholder="Explore nearby destinations">
@@ -182,6 +187,18 @@
             
         </div>
     </header>
+
+
+    <div class="mobile-nav-fade"></div>
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="#">Special</a></li>
+            <li><a href="#">Hotels</a></li>
+            <li><a href="#">Tours</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Support</a></li>
+        </ul>
+    </div>
 
     <!-- Support Chat -->
     <div id="supportChat" class="chat-modal">
@@ -565,5 +582,6 @@
     <script src="js/Chat.js"></script>
     <script src="js/DarkLight.js"></script>
     <script src="js/Login&LogOut.js"></script>
+    <script src="js/mobilenav.js"></script>
 </body>
 </html>

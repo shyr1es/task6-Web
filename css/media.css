@@ -1,0 +1,14 @@
+@media(max-width: 1139px){
+    .nav_list{
+        display: none;
+    }
+    .user{
+        display: none;
+    }
+    .mobile-nav-btn{
+        display: block;
+    }
+    #theme-switch {
+        display: none; 
+    }
+}
