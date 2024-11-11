@@ -15,7 +15,7 @@ body{
     background-position: center center;
     background-image: url('');
     transition: background 1s ease;
-    border-radius: 0 0 40px 40px;
+    /* border-radius: 0 0 40px 40px; */
     
 }
 .header a{

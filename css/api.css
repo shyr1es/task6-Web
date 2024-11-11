@@ -1,0 +1,63 @@
+
+#currentDateTime {
+    font-size: 1rem;
+    color: #777;
+}
+#cityInput {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc; 
+    width: 99px;
+}
+
+.city-info {
+    display: flex;
+    align-items: center; /* Выровнять по вертикали */
+    justify-content: flex-start; /* Выровнять по горизонтали */
+    gap: 20px; /* Добавить пространство между элементами */
+    text-align: left;
+}
+
+.city-info h1 {
+    font-size: 2rem;
+    color: slateblue;
+}
+
+.city-info h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.city-info p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Error Message Styles */
+.error-message {
+    color: red;
+    font-size: 1rem;
+    display: none;
+    margin-top: 10px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .header_content {
+        padding: 15px;
+    }
+
+    #cityInput {
+        width: 80%;
+    }
+
+    .weather_display {
+        width: 100%;
+    }
+
+    /* Для адаптивности можно добавить стили для горизонтального расположения на мобильных устройствах */
+    .city-info {
+        flex-direction: column; /* Для маленьких экранов текст будет располагаться вертикально */
+    }
+}

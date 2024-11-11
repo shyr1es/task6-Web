@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS-task1</title>
+    <title>Final Web</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/media.css ">
+    <link rel="stylesheet" href="css/api.css">
     <link rel="stylesheet" href="libs/autoComplete.js-10.2.7/dist/css/autoComplete.01.css">
     <link rel="stylesheet" href="libs/customSelect/custom-select.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
@@ -138,10 +139,19 @@
                     Discover the most engaging places
                     <div id="currentDateTime" class="current-date-time"></div>
                 </h1>
+                <input type="text" id="cityInput" placeholder="Enter City" />
                 <button class="button button--huge" id="discoverBtn">
-                    <img src="assets/icons/icons8-globe-30.png" alt="globus">
-                    Discover
+                    <img src="assets/icons/icons8-globe-30.png" alt="globe">
+                    Discover Weather
                 </button>
+                <div class="weather_display">
+                    <div id="cityInfo" class="city-info">
+                        <h2 id="cityName">City: ----</h2>
+                        <h1 id="temp">Temp: ----°C</h1>
+                        <p id="desc">Description: ----</p>
+                    </div>
+                    <p id="error" class="error-message">City not found. Please try again.</p> <!-- Error message -->
+                </div>
             </div>
             
             <form action="" class="form" id="bookingForm">
