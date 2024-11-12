@@ -42,13 +42,22 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
 
 
 // FOOTER email_Valid
-const inputSubscribe = document.querySelector('.subscribe__input');
-const label = document.querySelector('.subscribe__label');
+document.addEventListener('DOMContentLoaded', () => {
+    const inputSubscribe = document.querySelector('.subscribe__input');
+    const label = document.querySelector('.subscribe__label');
+    const form = document.querySelector('.subscribe');
 
-inputSubscribe.addEventListener('input', () => {
-    if (inputSubscribe.value.trim() !== '') {
-        label.classList.add('subscribe__label--top');
-    } else {
-        label.classList.remove('subscribe__label--top');
-    }
+    inputSubscribe.addEventListener('input', () => {
+        if (inputSubscribe.value.trim() !== '') {
+            label.classList.add('subscribe__label--top');
+        } else {
+            label.classList.remove('subscribe__label--top');
+        }
+    });
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Предотвращает отправку формы и обновление страницы
+        alert('Подписка оформлена!'); // Показать сообщение об успешной подписке
+    });
 });
+
