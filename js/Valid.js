@@ -17,28 +17,41 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
     if (locationInput.value.trim() === '') {
         locationError.style.display = 'block';
         formIsValid = false;
-        console.error('Error: The "location" can not be empty   ')
-        
+        console.error('Error: The "location" can not be empty');
     }
 
-    // Проверка поля Date
+    // Проверка поля Date на пустое значение
     if (dateInput.value.trim() === '') {
         dateError.style.display = 'block';
+        dateError.textContent = 'Date is required';
         formIsValid = false;
-        console.error('Error: The "date" field can not be empty')
+        console.error('Error: The "date" field can not be empty');
+    } else {
+        // Проверка на прошедшую дату
+        const enteredDate = new Date(dateInput.value);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Устанавливаем время на 00:00 для корректного сравнения
+
+        if (enteredDate < today) {
+            dateError.style.display = 'block';
+            dateError.textContent = 'select a future date';
+            formIsValid = false;
+            console.error('Error: The "date" can not be in the past');
+        }
     }
 
     // Если форма не валидна, предотвращаем отправку
     if (!formIsValid) {
         event.preventDefault();
-    }else{
-        console.log("The form has been successfully submitted",{
+    } else {
+        console.log("The form has been successfully submitted", {
             location: locationInput.value,
             date: dateInput.value
-        }); 
-        alert('Форма успешно отправлена!'); 
+        });
+        alert('Форма успешно отправлена!');
     }
 });
+
 
 
 // FOOTER email_Valid

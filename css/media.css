@@ -31,7 +31,7 @@
 	.header{
 		height: auto;
 		min-height: 500;
-		border-radius: 0 0 40px 40px;
+		/* border-radius: 0 0 40px 40px; */
 	}
 	.container_header{
 		justify-content: flex-start;
