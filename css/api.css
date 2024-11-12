@@ -26,12 +26,12 @@
 
 .city-info h2 {
     font-size: 1.5rem;
-    color: #333;
+    color:  #9c9c9c;
 }
 
 .city-info p {
     font-size: 1rem;
-    color: #555;
+    color: #9c9c9c;
 }
 
 /* Error Message Styles */
